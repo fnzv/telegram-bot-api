@@ -271,13 +271,15 @@ func (bot *BotAPI) GetFileDirectURL(fileID string) (string, error) {
 // another request.
 func (bot *BotAPI) GetMe() (User, error) {
 	resp, err := bot.MakeRequest("getMe", nil)
+	fmt.Println("Resp is",resp)
 	if err != nil {
 		return User{}, err
 	}
-
+        
+	
 	var user User
 	json.Unmarshal(resp.Result, &user)
-
+	fmt.Println("user is",user)
 	bot.debugLog("getMe", nil, user)
 
 	return user, nil
