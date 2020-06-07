@@ -64,6 +64,7 @@ func NewBotAPIWithClient(token, apiEndpoint string, client HttpClient) (*BotAPI,
 
 		apiEndpoint: apiEndpoint,
 	}
+	fmt.Println("Debug: per bot get me")
 
 	self, err := bot.GetMe()
 	if err != nil {
